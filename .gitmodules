@@ -1,0 +1,12 @@
+[submodule "xilauncher"]
+	path = xilauncher
+	url = https://github.com/TobiasPott/XiLauncher.git
+[submodule "xiloader"]
+	path = xiloader
+	url = https://github.com/LandSandBoat/xiloader.git
+[submodule "xidb"]
+	path = xidb
+	url = https://github.com/TobiasPott/XiDB.git
+[submodule "xiserver"]
+	path = xiserver
+	url = https://github.com/LandSandBoat/server.git
