@@ -3,21 +3,15 @@
 
 #define MyAppName "Final Fantasy XI PSE"
 #define MyAppPublisher "NOT SQUARE ENIX CO., LTD."
-#define MyAppURL "https://github.com/LandSandBoat/server/wiki/Quick-Start-Guide"
+#define MyAppURL "https://github.com/TobiasPott/XiEnv"
 
 #define MyAppExeName "xilauncher.exe"
 #define MyAppAssocName MyAppName + " File"
-#define MyAppAssocExt ".myp"
-#define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
 
 #define PackageVerbositySuffix "Micro"; "-Source" ; set to -Micro or -Minimal for smaller server package without code and tools
 #define SourceFolder "C:\Development\Standalone\LandSandBoat\xienv"
 #define ApplicationVersion GetVersionNumbersString("{#SourceFolder}\xilauncher\{#MyAppExeName}")
 
-; [Types]
-; Name: "full"; Description: "Full environment installation"
-; Name: "serverOnly"; Description: "Server only installation"
-; Name: "launcherOnly"; Description: "Launcher only installation"
 [Types]
 Name: "full"; Description: "Full installation"
 Name: "custom"; Description: "Custom installation"; Flags: iscustom
@@ -66,13 +60,6 @@ WizardStyle=modern
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
-
-[Registry]
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocExt}\OpenWithProgids"; ValueType: string; ValueName: "{#MyAppAssocKey}"; ValueData: ""; Flags: uninsdeletevalue
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}"; ValueType: string; ValueName: ""; ValueData: "{#MyAppAssocName}"; Flags: uninsdeletekey
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\xilauncher\{#MyAppExeName},0"
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\xilauncher\{#MyAppExeName}"" ""%1"""
-
 
 [Files]
 Source: "{#SourceFolder}\xiinstaller\Prerequisites\*"; DestDir: "{app}\Prerequisites"; Components: serverOnly launcherOnly; Flags: ignoreversion recursesubdirs createallsubdirs
